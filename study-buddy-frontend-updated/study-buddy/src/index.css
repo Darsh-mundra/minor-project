@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ===== Study Buddy colour themes =====
+   The whole UI uses Tailwind's indigo-* scale as the brand colour, so overriding
+   those variables re-themes every page. Default (no data-theme) = Indigo.
+   Switched at runtime by src/utils/theme.ts (ThemePicker in the navbar). */
+:root[data-theme="teal"] {
+  --color-indigo-50: #f0fdfa;
+  --color-indigo-100: #ccfbf1;
+  --color-indigo-200: #99f6e4;
+  --color-indigo-300: #5eead4;
+  --color-indigo-400: #2dd4bf;
+  --color-indigo-500: #14b8a6;
+  --color-indigo-600: #0d9488;
+  --color-indigo-700: #0f766e;
+  --color-indigo-800: #115e59;
+  --color-indigo-900: #134e4a;
+  --color-indigo-950: #042f2e;
+  --color-slate-50: #f0fdfa;
+}
+:root[data-theme="orange"] {
+  --color-indigo-50: #fff7ed;
+  --color-indigo-100: #ffedd5;
+  --color-indigo-200: #fed7aa;
+  --color-indigo-300: #fdba74;
+  --color-indigo-400: #fb923c;
+  --color-indigo-500: #f97316;
+  --color-indigo-600: #ea580c;
+  --color-indigo-700: #c2410c;
+  --color-indigo-800: #9a3412;
+  --color-indigo-900: #7c2d12;
+  --color-indigo-950: #431407;
+  --color-slate-50: #fff7ed;
+}
+:root[data-theme="green"] {
+  --color-indigo-50: #f0fdf4;
+  --color-indigo-100: #dcfce7;
+  --color-indigo-200: #bbf7d0;
+  --color-indigo-300: #86efac;
+  --color-indigo-400: #4ade80;
+  --color-indigo-500: #22c55e;
+  --color-indigo-600: #16a34a;
+  --color-indigo-700: #15803d;
+  --color-indigo-800: #166534;
+  --color-indigo-900: #14532d;
+  --color-indigo-950: #052e16;
+  --color-slate-50: #f0fdf4;
+}
+:root[data-theme="rose"] {
+  --color-indigo-50: #fff1f2;
+  --color-indigo-100: #ffe4e6;
+  --color-indigo-200: #fecdd3;
+  --color-indigo-300: #fda4af;
+  --color-indigo-400: #fb7185;
+  --color-indigo-500: #f43f5e;
+  --color-indigo-600: #e11d48;
+  --color-indigo-700: #be123c;
+  --color-indigo-800: #9f1239;
+  --color-indigo-900: #881337;
+  --color-indigo-950: #4c0519;
+  --color-slate-50: #fff1f2;
+}
+
+/* ===== Study Buddy dark mode =====
+   Switched by data-mode="dark" on <html> (src/utils/theme.ts). Generated from the colour
+   utilities the UI actually uses; works with every colour theme above. */
+:root[data-mode="dark"] { color-scheme: dark; --sb-label: #cbd5e1; --sb-select: #e2e8f0; }
+:root[data-mode="dark"] .bg-amber-100 { background-color: color-mix(in srgb, #f59e0b 20%, transparent); }
+:root[data-mode="dark"] .bg-amber-50 { background-color: color-mix(in srgb, #f59e0b 12%, transparent); }
+:root[data-mode="dark"] .bg-emerald-100 { background-color: color-mix(in srgb, #10b981 20%, transparent); }
+:root[data-mode="dark"] .bg-emerald-50 { background-color: color-mix(in srgb, #10b981 12%, transparent); }
+:root[data-mode="dark"] .bg-indigo-100 { background-color: color-mix(in srgb, var(--color-indigo-600) 20%, transparent); }
+:root[data-mode="dark"] .bg-indigo-50 { background-color: color-mix(in srgb, var(--color-indigo-600) 12%, transparent); }
+:root[data-mode="dark"] .bg-rose-100 { background-color: color-mix(in srgb, #f43f5e 20%, transparent); }
+:root[data-mode="dark"] .bg-rose-50 { background-color: color-mix(in srgb, #f43f5e 12%, transparent); }
+:root[data-mode="dark"] .bg-slate-100 { background-color: #1c2740; }
+:root[data-mode="dark"] .bg-slate-200 { background-color: #2a3650; }
+:root[data-mode="dark"] .bg-slate-50 { background-color: #0b1220; }
+:root[data-mode="dark"] .bg-slate-50\/50 { background-color: rgb(11 18 32 / 0.5); }
+:root[data-mode="dark"] .bg-slate-50\/60 { background-color: rgb(11 18 32 / 0.6); }
+:root[data-mode="dark"] .bg-white { background-color: #131c2e; }
+:root[data-mode="dark"] .bg-white\/80 { background-color: rgb(19 28 46 / 0.8); }
+:root[data-mode="dark"] .bg-white\/95 { background-color: rgb(19 28 46 / 0.95); }
+:root[data-mode="dark"] .border-amber-200 { border-color: color-mix(in srgb, #f59e0b 30%, transparent); }
+:root[data-mode="dark"] .border-emerald-200 { border-color: color-mix(in srgb, #10b981 30%, transparent); }
+:root[data-mode="dark"] .border-indigo-100 { border-color: color-mix(in srgb, var(--color-indigo-600) 20%, transparent); }
+:root[data-mode="dark"] .border-indigo-200 { border-color: color-mix(in srgb, var(--color-indigo-600) 30%, transparent); }
+:root[data-mode="dark"] .border-rose-200 { border-color: color-mix(in srgb, #f43f5e 30%, transparent); }
+:root[data-mode="dark"] .border-slate-100 { border-color: #1f2a40; }
+:root[data-mode="dark"] .border-slate-100\/20 { border-color: rgb(31 42 64 / 0.2); }
+:root[data-mode="dark"] .border-slate-100\/30 { border-color: rgb(31 42 64 / 0.3); }
+:root[data-mode="dark"] .border-slate-200 { border-color: #2a3650; }
+:root[data-mode="dark"] .border-slate-200\/60 { border-color: rgb(42 54 80 / 0.6); }
+:root[data-mode="dark"] .border-slate-200\/80 { border-color: rgb(42 54 80 / 0.8); }
+:root[data-mode="dark"] .border-slate-300 { border-color: #3b4863; }
+:root[data-mode="dark"] .border-white { border-color: #131c2e; }
+:root[data-mode="dark"] .divide-slate-100>:not(:last-child) { border-color: #1f2a40; }
+:root[data-mode="dark"] .focus\:bg-white:focus { background-color: #131c2e; }
+:root[data-mode="dark"] .group:hover .group-hover\:text-indigo-600 { color: color-mix(in srgb, var(--color-indigo-600) 55%, white); }
+:root[data-mode="dark"] .hover\:bg-amber-100:hover { background-color: color-mix(in srgb, #f59e0b 20%, transparent); }
+:root[data-mode="dark"] .hover\:bg-emerald-100:hover { background-color: color-mix(in srgb, #10b981 20%, transparent); }
+:root[data-mode="dark"] .hover\:bg-indigo-100:hover { background-color: color-mix(in srgb, var(--color-indigo-600) 20%, transparent); }
+:root[data-mode="dark"] .hover\:bg-indigo-50:hover { background-color: color-mix(in srgb, var(--color-indigo-600) 12%, transparent); }
+:root[data-mode="dark"] .hover\:bg-rose-100:hover { background-color: color-mix(in srgb, #f43f5e 20%, transparent); }
+:root[data-mode="dark"] .hover\:bg-rose-50:hover { background-color: color-mix(in srgb, #f43f5e 12%, transparent); }
+:root[data-mode="dark"] .hover\:bg-slate-100:hover { background-color: #1c2740; }
+:root[data-mode="dark"] .hover\:bg-slate-200:hover { background-color: #2a3650; }
+:root[data-mode="dark"] .hover\:bg-slate-50:hover { background-color: #0b1220; }
+:root[data-mode="dark"] .hover\:bg-slate-50\/60:hover { background-color: rgb(11 18 32 / 0.6); }
+:root[data-mode="dark"] .hover\:bg-slate-50\/80:hover { background-color: rgb(11 18 32 / 0.8); }
+:root[data-mode="dark"] .hover\:border-slate-300:hover { border-color: #3b4863; }
+:root[data-mode="dark"] .hover\:text-amber-600:hover { color: #fbbf24; }
+:root[data-mode="dark"] .hover\:text-indigo-600:hover { color: color-mix(in srgb, var(--color-indigo-600) 55%, white); }
+:root[data-mode="dark"] .hover\:text-indigo-800:hover { color: color-mix(in srgb, var(--color-indigo-600) 35%, white); }
+:root[data-mode="dark"] .hover\:text-rose-600:hover { color: #fb7185; }
+:root[data-mode="dark"] .hover\:text-slate-700:hover { color: #cbd5e1; }
+:root[data-mode="dark"] .hover\:text-slate-800:hover { color: #e2e8f0; }
+:root[data-mode="dark"] .hover\:text-slate-900:hover { color: #f1f5f9; }
+:root[data-mode="dark"] .ring-white { --tw-ring-color: #131c2e; }
+:root[data-mode="dark"] .text-amber-600 { color: #fbbf24; }
+:root[data-mode="dark"] .text-amber-700 { color: #fcd34d; }
+:root[data-mode="dark"] .text-amber-800 { color: #fde68a; }
+:root[data-mode="dark"] .text-amber-900 { color: #fde68a; }
+:root[data-mode="dark"] .text-emerald-600 { color: #34d399; }
+:root[data-mode="dark"] .text-emerald-700 { color: #6ee7b7; }
+:root[data-mode="dark"] .text-emerald-800 { color: #a7f3d0; }
+:root[data-mode="dark"] .text-indigo-600 { color: color-mix(in srgb, var(--color-indigo-600) 55%, white); }
+:root[data-mode="dark"] .text-indigo-700 { color: color-mix(in srgb, var(--color-indigo-600) 45%, white); }
+:root[data-mode="dark"] .text-indigo-800 { color: color-mix(in srgb, var(--color-indigo-600) 35%, white); }
+:root[data-mode="dark"] .text-indigo-900 { color: color-mix(in srgb, var(--color-indigo-600) 30%, white); }
+:root[data-mode="dark"] .text-rose-600 { color: #fb7185; }
+:root[data-mode="dark"] .text-rose-700 { color: #fda4af; }
+:root[data-mode="dark"] .text-rose-800 { color: #fecdd3; }
+:root[data-mode="dark"] .text-slate-500 { color: #94a3b8; }
+:root[data-mode="dark"] .text-slate-600 { color: #b0bccc; }
+:root[data-mode="dark"] .text-slate-700 { color: #cbd5e1; }
+:root[data-mode="dark"] .text-slate-800 { color: #e2e8f0; }
+:root[data-mode="dark"] .text-slate-900 { color: #f1f5f9; }
+:root[data-mode="dark"] .to-white { --tw-gradient-to: #131c2e; }

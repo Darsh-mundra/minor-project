@@ -1,0 +1,6 @@
+{
+  "name": "Study Buddy - College Student Collaboration & Learning Platform",
+  "description": "Centralized AI-powered academic learning, resource sharing, collaborative study workspaces, quizzes, flashcards, doubt discussions, project teams, and student opportunities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
